@@ -23,6 +23,8 @@ services:
       - './src:/var/www'
     networks:
       - app_network
+    depends_on:
+      - db
   db:
     image: mariadb:10.2
     container_name: app-db
