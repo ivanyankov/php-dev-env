@@ -1,0 +1,54 @@
+version: "3.7"
+
+volumes:
+  mysql_dev_env:
+
+networks:
+  external-proxy:
+    external: true
+    name: dev-env-proxy
+  app_network:
+    driver: bridge
+
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: ./docker/app/Dockerfile
+    image: app
+    container_name: dev-application
+    restart: unless-stopped
+    working_dir: /var/www/
+    volumes:
+      - './src:/var/www'
+    networks:
+      - app_network
+  db:
+    image: mariadb:10.2
+    container_name: app-db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: databaseName
+      MYSQL_ROOT_PASSWORD: DatabaseRootPassword!
+      MYSQL_PASSWORD: databasePassword
+      MYSQL_USER: databaseUsername
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    networks:
+      - app_network
+    ports:
+      - "3308:3306"
+    volumes:
+      - mysql_dev_env:/var/lib/mysql
+  app-nginx:
+    image: nginx:1.17-alpine
+    container_name: app-nginx
+    restart: unless-stopped
+    ports:
+      - 80:80
+    volumes:
+      - './src/web:/var/www/web'
+      - './docker/nginx/conf.d:/etc/nginx/conf.d'
+    networks:
+      - app_network
+      - external-proxy
