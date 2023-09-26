@@ -8,9 +8,10 @@ Simple dockerized development env for PHP.
 1. Clone the repository `git@github.com:ivanyankov/php-dev-env.git`
 2. CD to the cloned folder
 3. Run in your terminal `chmod +x setup.sh`
-4. Enter a domain name for your development env when prompt. Example: **development-application**
-5. If everything was configured correctly you should have one container with three images running `app-nginx`, `app-db`, `dev-application`
-6. Access the application on `development-application.local`
+4. Run the script `./setup.sh`
+5. Enter a domain name for your development env when prompt. Example: **development-application**
+6. If everything was configured correctly you should have one container with three images running `app-nginx`, `app-db`, `dev-application`
+7. Access the application on `development-application.local`
 
 ## Connect to datbase
 1. Install any SQL client software application
