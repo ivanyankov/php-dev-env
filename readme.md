@@ -1,5 +1,5 @@
-# Dockerized PHP development environment
-Simple dockerized development env for PHP.
+# Dockerized WordPress
+Simple dockerized WordPress using roots/bedrock
 
 ## Prerequisites
 - Docker
@@ -12,10 +12,6 @@ Simple dockerized development env for PHP.
 5. Enter a domain name for your development env when prompt. Example: **development-application**
 6. If everything was configured correctly you should have one container with three images running `app-nginx`, `app-db`, `dev-application`
 7. Access the application on `development-application.local`
-
-## Connect to datbase
-1. Install any SQL client software application
-2. Connect to the database using the following credentials: Server Host: `localhost`, Database Name: `databaseName`, Port: `3308`, Username: `root`, Password: `DatabaseRootPassword!`
 
 ## Usage
 The root of the application where your index.php file must be placed is `/src/web`. Modify your database connection file to use the credentials from the `docker-compose.yml` file.

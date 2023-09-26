@@ -30,10 +30,10 @@ services:
     container_name: app-db
     restart: unless-stopped
     environment:
-      MYSQL_DATABASE: databaseName
-      MYSQL_ROOT_PASSWORD: DatabaseRootPassword!
-      MYSQL_PASSWORD: databasePassword
-      MYSQL_USER: databaseUsername
+      MYSQL_DATABASE: database_name
+      MYSQL_ROOT_PASSWORD: database_root_password
+      MYSQL_PASSWORD: database_password
+      MYSQL_USER: database_user
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     networks:
