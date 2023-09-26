@@ -13,8 +13,5 @@ Simple dockerized WordPress using roots/bedrock
 6. If everything was configured correctly you should have one container with three images running `app-nginx`, `app-db`, `dev-application`
 7. Access the application on `development-application.local`
 
-## Usage
-The root of the application where your index.php file must be placed is `/src/web`. Modify your database connection file to use the credentials from the `docker-compose.yml` file.
-
 ## Compatibility
 Developed and tested on `Ubuntu 22.04.3 LTS`
