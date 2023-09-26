@@ -1,4 +1,4 @@
-# Dockerzied PHP env
+# Dockerized PHP development environment
 Simple dockerized development env for PHP.
 
 ## Prerequisites
