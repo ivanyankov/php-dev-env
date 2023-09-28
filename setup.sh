@@ -17,7 +17,6 @@ else
     sed -i "s/WP_HOME=.*$/WP_HOME='http://$new_domain.local/'" src/.env | sudo tee -a src/.env
 
     # Rebuild and restart the Docker containers
-    docker network create dev-env-proxy
     docker compose down -v
     docker compose build --no-cache
     docker compose up -d
